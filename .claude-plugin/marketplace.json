@@ -1,0 +1,21 @@
+{
+  "name": "dachengzionly-skills",
+  "owner": {
+    "name": "dachengzionly"
+  },
+  "metadata": {
+    "description": "Practical skills for Claude Code - structured workflows for feature modification",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "feature-modification-workflow",
+      "description": "A structured workflow for modifying existing features. Determine scenario first (simple issue/bug fix/complex issue/refactoring), then choose appropriate workflow. Simple issues go direct to code, complex issues follow 5-step process.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/feature-modification-workflow"
+      ]
+    }
+  ]
+}

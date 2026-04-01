@@ -1,0 +1,26 @@
+{
+  "name": "dachengzionly-skills",
+  "description": "芒格思维工作流skills集合：功能修改、反向决策检查、周复盘、能圈边界审视、解决方案包装",
+  "skills": [
+    {
+      "name": "feature-modification-workflow",
+      "path": "./skills/feature-modification-workflow"
+    },
+    {
+      "name": "反向决策检查",
+      "path": "./skills/反向决策检查"
+    },
+    {
+      "name": "周复盘检查清单",
+      "path": "./skills/周复盘检查清单"
+    },
+    {
+      "name": "能圈边界审视",
+      "path": "./skills/能圈边界审视"
+    },
+    {
+      "name": "解决方案包装器",
+      "path": "./skills/解决方案包装器"
+    }
+  ]
+}

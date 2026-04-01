@@ -9,49 +9,10 @@
   },
   "plugins": [
     {
-      "name": "feature-modification-workflow",
-      "description": "A structured workflow for modifying existing features. Determine scenario first (simple issue/bug fix/complex issue/refactoring), then choose appropriate workflow. Simple issues go direct to code, complex issues follow 5-step process.",
+      "name": "dachengzionly-skills",
+      "description": "芒格思维工作流skills集合：功能修改、反向决策检查、周复盘、能圈边界审视、解决方案包装",
       "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/feature-modification-workflow"
-      ]
-    },
-    {
-      "name": "反向决策检查",
-      "description": "在开发新功能、新产品、接新需求前，用芒格反向思考方法进行风险评估。先列死法，再找活路。",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/反向决策检查"
-      ]
-    },
-    {
-      "name": "周复盘检查清单",
-      "description": "用芒格思维进行每周自我校准，持续优化决策质量。定期复盘是保持决策质量的关键，防止偏离轨道。",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/周复盘检查清单"
-      ]
-    },
-    {
-      "name": "能圈边界审视",
-      "description": "判断新需求或新方向是否在你的核心能力范围内，防止能圈溢出。知道自己能圈边界的人更安全。",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/能圈边界审视"
-      ]
-    },
-    {
-      "name": "解决方案包装器",
-      "description": "把工具或功能包装成用户想要的解决方案，提升产品价值和定价空间。用户买的不是工具，而是结果。",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/解决方案包装器"
-      ]
+      "strict": false
     }
   ]
 }

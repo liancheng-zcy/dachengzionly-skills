@@ -1,14 +1,36 @@
 # dachengzionly-skills
 
-Practical skills for Claude Code - structured workflows for feature modification.
+Practical skills for Claude Code - structured workflows using Munger's thinking framework.
 
 ## Installation
 
 ### Claude Code
 
 ```bash
+# Add marketplace
 /plugin marketplace add liancheng-zcy/dachengzionly-skills
-/plugin install feature-modification-workflow@dachengzionly-skills
+
+# Install plugin (includes all 5 skills)
+/plugin install dachengzionly-skills@dachengzionly-skills
+```
+
+Or add to `~/.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "dachengzionly-skills": {
+      "source": {
+        "source": "github",
+        "repo": "liancheng-zcy/dachengzionly-skills"
+      },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "dachengzionly-skills@dachengzionly-skills": true
+  }
+}
 ```
 
 ### Claude.ai
@@ -59,6 +81,78 @@ A structured workflow for modifying existing features. Determines scenario compl
 **触发场景**：用户说"帮我写个产品介绍..."、"这个功能怎么卖..."、"用户不买单..."
 
 **核心理念**：用户买的不是"工具"，而是"结果"。
+
+## Development
+
+### Repository Structure
+
+```text
+.
+├── .claude-plugin/
+│   ├── marketplace.json    # Marketplace definition
+│   └── plugin.json         # Plugin config (skills directory path)
+├── skills/
+│   ├── feature-modification-workflow/
+│   │   └── SKILL.md
+│   ├── 反向决策检查/
+│   │   └── SKILL.md
+│   ├── 周复盘检查清单/
+│   │   └── SKILL.md
+│   ├── 能圈边界审视/
+│   │   └── SKILL.md
+│   └── 解决方案包装器/
+│       └── SKILL.md
+├── README.md
+├── CLAUDE.md
+└── LICENSE
+```
+
+### Adding a New Skill
+
+1. Create directory: `skills/<skill-name>/SKILL.md`
+2. Write SKILL.md with frontmatter:
+
+   ```markdown
+   ---
+   name: <skill-name>
+   description: <one-line description with trigger scenarios>
+   ---
+   
+   # <skill-name>
+   
+   > **核心理念**：...
+   
+   ## 使用场景
+   ...
+   
+   ## 执行流程
+   ...
+   ```
+
+3. Update `metadata.version` in `.claude-plugin/marketplace.json`
+4. Commit and push to GitHub
+
+### Version Update Flow
+
+1. Modify skill content in `skills/<skill-name>/SKILL.md`
+2. Update version in `.claude-plugin/marketplace.json`:
+
+   ```json
+   "metadata": {
+     "version": "1.2.0"  // bump version
+   }
+   ```
+
+3. Commit with message: `feat: update <skill-name> ...` or `fix: ...`
+4. Push to GitHub
+5. Users with `autoUpdate: true` will automatically get updates on next Claude Code start
+
+### Key Rules
+
+- **SKILL.md frontmatter**: Must include `name` and `description`
+- **plugin.json skills path**: Use directory string `"./skills/"`, NOT array format
+- **Version bump**: Required for users to receive updates
+- **No eval data**: Keep `munger-*` directories in .gitignore for development test data
 
 ## License
 

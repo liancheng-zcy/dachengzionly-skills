@@ -8,3 +8,7 @@ Thumbs.db
 
 # Claude local settings
 .claude/settings.local.json
+
+# Development eval data
+munger-skills-workflow/
+munger-skills-workspace/
